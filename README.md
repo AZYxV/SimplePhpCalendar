@@ -1,2 +1,3 @@
 # SimplePhpCalendar
- Simple php calendar made for Kyxar
+
+Simple php calendar made for Kyxar, work in progress..

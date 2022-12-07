@@ -2,7 +2,7 @@
  function calendar($month, $year) {
     $nbrOfDay = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
-   echo "<table>";
+   echo "<table class='table table-striped'>";
 
    echo "<thead><tr><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th><th>Dim</th></tr></thead>";
 
@@ -14,47 +14,47 @@
 
       if($i == $nbrOfDay)
       {
+         
          if($dayWeek == 1)
          {
             echo "<tr>";
          }
         
-        echo "<td>".$i."</td></tr>";
+            echo "<td class='square'>".$i."</td></tr>";
 
-      }elseif($i == 1){
+         }elseif($i == 1){
 
-         echo "<tr>";
-
-         if($dayWeek == 0)
-         {
-            $dayWeek = 7;
-         }
-
-         for($j=1;$j!=$dayWeek;$j++) {
-            echo "<td></td>";
-         }
-
-         echo "<td>".$i."</td>";
-
-         if($dayWeek == 7) 
-         {
-            echo "</tr>";
-         }
-      }else{
-         if($dayWeek == 1)
-         {
             echo "<tr>";
-         }
 
-         echo "<td>".$i."</td>";
+            if($dayWeek == 0)
+            {
+               $dayWeek = 7;
+            }
 
-         if($dayWeek == 0)
-         {
-            echo "</tr>";
+            for($j=1;$j!=$dayWeek;$j++) {
+               echo "<td></td>";
+            }
+
+            echo "<td class='square'>".$i."</td>";
+
+            if($dayWeek == 7) 
+            {
+               echo "</tr>";
+            }
+         }else{
+            if($dayWeek == 1)
+            {
+               echo "<tr>";
+            }
+
+               echo "<td class='square'>".$i."</td>";
+
+            if($dayWeek == 0)
+            {
+               echo "</tr>";
+            }
          }
       }
-   }
-
    echo "</table>";
  }
 
